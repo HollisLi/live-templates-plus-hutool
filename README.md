@@ -1,51 +1,91 @@
 # live-templates-plus-hutool
 
-![Build](https://github.com/HollisLi/live-templates-plus-hutool/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
+> An enhanced version of Idea live templates, with more popular templates, and support for the Hutool toolkits.<br/>
+> Idea live templates 的增强版, 加入了更多常用的模板, 以及对 Hutool 工具包的支持.
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [pluginGroup](./gradle.properties) and [pluginName](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+## Live Templates Plus(Hutool)
 
-<!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+[![Version](https://img.shields.io/jetbrains/plugin/v/24784-live-templates-plus-hutool-.svg)](https://plugins.jetbrains.com/plugin/24784-live-templates-plus-hutool-)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/24784-live-templates-plus-hutool-.svg)](https://plugins.jetbrains.com/plugin/24784-live-templates-plus-hutool-)
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+## Help Document
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
-<!-- Plugin description end -->
+[Help Document | 帮助文档](https://www.wolai.com/haozhe/oMDRF7Rn6j4kVpgt8H8N9j)
 
-## Installation
+## Live Templates Example | 模板示例
+
+> For more Example, please refer to the help document <br/>
+> 更多示例详情, 请看[帮助文档](https://www.wolai.com/haozhe/oMDRF7Rn6j4kVpgt8H8N9j)
+
+### String
+
+|            |                                    |
+|------------|------------------------------------|
+| Live Input | Hutool                             |
+| strb       | StrUtil.isBlank(String)            |
+| ifstrb     | if (StrUtil.isBlank(String)) {}    |
+| strnb      | StrUtil.isNotBlank(String)         |
+| ifstrnb    | if (StrUtil.isNotBlank(String)) {} |
+| stre       | StrUtil.equals(str1, str2)         |
+| ifstre     | if(StrUtil.equals(str1, str2)) {}  |
+| strne      | !StrUtil.equals(str1, str2)        |
+| ifstrne    | if(!StrUtil.equals(str1, str2)) {} |
+| strf       | StrUtil.format(str, args...)       |
+
+### Annotaion
+
+|            |                                                                  |
+|------------|------------------------------------------------------------------|
+| Live Input | Automatic Completion                                             |
+| slfj       | @Slf4j                                                           |
+| logfj      | @Log4j2                                                          |
+| restc      | @RestController                                                  |
+| service    | @Service                                                         |
+| mapper     | @Mapper                                                          |
+| auto       | @Autowired                                                       |
+| resource   | @Resource                                                        |
+| reqm       | @RequestMapping("/")                                             |
+| getm       | @GetMapping("/")                                                 |
+| postm      | @PostMapping("/")                                                |
+| putm       | @PutMapping("/"):                                                |
+| delm       | @DeleteMapping("/")                                              |
+| reqp       | @RequestParam("");                                               |
+| reqb       | @RequestBody                                                     |
+| allarg     | @AllArgsConstructor                                              |
+| noarg      | @NoArgsConstructor                                               |
+| reqarg     | @RequiredArgsConstructor                                         |
+| data       | @Data                                                            |
+| builder    | @Builder                                                         |
+| getter     | @Getter                                                          |
+| setter     | @Setter                                                          |
+| tostring   | @ToString                                                        |
+| enumv      | @EnumValue                                                       |
+| clean      | @Cleanup                                                         |
+| jsonfor    | @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8") |
+| datefor    | @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")                 |
+| validated  | @Validated                                                       |
+| valid      | @Valid                                                           |
+| notn       | @NotNull("")                                                     |
+| notb       | @NotBlank("")                                                    |
+| size       | @Size("")                                                        |
+| length     | @Length("")                                                      |
+
+### Installation
 
 - Using the IDE built-in plugin system:
-  
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "live-templates-plus-hutool"</kbd> >
+
+  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "Live Template Plus(Hutool)"</kbd> >
   <kbd>Install</kbd>
-  
-- Using JetBrains Marketplace:
-
-  Go to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) and install it by clicking the <kbd>Install to ...</kbd> button in case your IDE is running.
-
-  You can also download the [latest release](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID/versions) from JetBrains Marketplace and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 - Manually:
 
-  Download the [latest release](https://github.com/HollisLi/live-templates-plus-hutool/releases/latest) and install it manually using
+  Download the [latest release](https://github.com/HollisLi/live-templates-plus-hutool/releases/latest) and install it
+  manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
-
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
 
 [template]: https://github.com/JetBrains/intellij-platform-plugin-template
+
 [docs:plugin-description]: https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation
